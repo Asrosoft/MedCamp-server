@@ -56,7 +56,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Select <back> to return to screen that shows the LAMP appliance services
   
 ### Connect to server:
-  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP server.png)
+  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
   - Enter the address: 192.168.2.250 in your browser address bar
 
   
