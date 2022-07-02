@@ -83,7 +83,15 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Click the Adminer icon
 - enter Username: adminer, and password is the Adminer password you entered in the setup
 - Click 'Create database', enter the name 'medcamp', then click Save
-- Click 'SQL command', then import and
-- 
-  
-  
+- Click 'SQL command', then import and click the Browse... button in the File Upload box
+  - locate and select the medcamp-install/schema.sql file
+  - click the Execute button
+- Select the medcamp database in the DB list at the left of the page
+- Click Privileges at the top of right side pane
+- Click Create user
+  - enter medcamp as the username, medcamp as the password
+  - tick the All privileges check box
+  - click Save at the bottom of the form
+
+### Add medcamp web site to Turnkey server initial web page
+- Return to 192.168.2.250 in the browser address bar
