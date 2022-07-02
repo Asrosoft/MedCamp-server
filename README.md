@@ -16,7 +16,6 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Accept the default file location
 
 #### Start the empty virtual machine:
-![Step-2]
 - Select start-up disk by clicking the folder icon
 - Click Add to locate the downloaded Turnkey Linux Lamp iso
 - Select the added iso, then click choose
@@ -39,9 +38,9 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - Atteched to: Bridged adapter
   - Name: should default to your host machine's network device
   - click OK
+    ![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-networking.png)
 
 ### Configure server networking:
-  ![Step-3]
   Note: example IP addresses used conform to the default for home network routers. Use the IP addresses that conform to your router.
 - Press 'tab' to close server console
 - lamp login: root and then enter password entered in set up
@@ -52,11 +51,12 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Press 'down arrow' for next line, then again
 - Default gateway: 192.168.1.1
 - Name server: 192.168.1.1
+    ![Step-3](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/turnkey-networking.png)
 - Press 'tab' then 'enter' to accept
 - Select 'back' to return to screen that shows the LAMP appliance services
   
 ### Connect to server:
-  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
   - Enter the address: 192.168.2.250 in your browser address bar
+  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
 
   
