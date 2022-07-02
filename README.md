@@ -38,7 +38,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - Atteched to: Bridged adapter
   - Name: should default to your host machine's network device
   - click OK
-    ![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-networking.png)
+    ![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-network.png)
 
 ### Configure server networking:
   Note: example IP addresses used conform to the default for home network routers. Use the IP addresses that conform to your router.
