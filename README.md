@@ -47,16 +47,42 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - console software will restart, with Advanced menu option: press <enter>
 - Networking highlighted: press 'enter'
 - Static IP selected: press 'enter'
-- IP address: delete contents, then enter 192.168.1.250
+- IP address: delete contents, then enter 192.168.2.250
 - Press 'down arrow' for next line, then again
-- Default gateway: 192.168.1.1
-- Name server: 192.168.1.1
-    ![Step-3](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/turnkey-networking.png)
+- Default gateway: 192.168.2.1
+- Name server: 192.168.2.1
+![Step-3](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/turnkey-networking.png)
 - Press 'tab' then 'enter' to accept
 - Select 'back' to return to screen that shows the LAMP appliance services
   
 ### Connect to server:
-  - Enter the address: 192.168.2.250 in your browser address bar
-  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
+- Enter the address: 192.168.2.250 in your browser address bar
+  Note: you may get a 'Warning: Poential Security Risk Ahead' message from your browser. Click Advanced..., then scroll down and click 'Accept the Risk and Continue'
+![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
 
+### Create the medcamp web site:
+- Click the Webmin icon
+- enter username: root, and password as entered in the setup process
+- select Tools, File Manager from the left side menu
+  - click the File button and select  upload to current directory
+  - click the box to select the MedCamp-master.zip file downloaded from: https://github.com/Asrosoft/medcamp/archive/refs/heads/master.zip
+  - click Upload, and when finished, scroll the directory list to the end using the page buttons at the bottom right of the page, or select 500 as the number of items to show from the drop down towards the top left of the directory list.
+  - right click the MedCamp-master.zip file name, and select extract
+- select Servers, Apache webserver from the left side menu
+  - select the Global Configuration tab
+    - select Networking and addresses
+    - click the radio button to the left of All on the first blank line, enter 8080 in the port column, then click Save
+  - select Create Virtual Host tab
+    - enter 8080 in the Port field and click the radion button to the left of the input box
+    - select /usr/share/MedCamp-master as the document root
+  - Click the Apply Changes button at the top right of the page, eith the 'recycle' icon
+  
+### Create the medcamp database:
+- Click the Adminer icon
+- enter Username: adminer, and password is the Adminer password you entered in the setup
+- Click 'Create database', enter the name 'medcamp', then click Save
+- Click 'SQL command', then import and
+- navigate in the right pane, to /usr/share to view the contents of the /usr/share folder
+- 
+  
   
