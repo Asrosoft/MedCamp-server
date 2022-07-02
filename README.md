@@ -64,6 +64,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Click the Webmin icon
 - enter username: root, and password as entered in the setup process
 - select Tools, File Manager from the left side menu
+  - navigate in the right pane, to /usr/share to view the contents of the /usr/share folder
   - click the File button and select  upload to current directory
   - click the box to select the MedCamp-master.zip file downloaded from: https://github.com/Asrosoft/medcamp/archive/refs/heads/master.zip
   - click Upload, and when finished, scroll the directory list to the end using the page buttons at the bottom right of the page, or select 500 as the number of items to show from the drop down towards the top left of the directory list.
@@ -78,11 +79,11 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - Click the Apply Changes button at the top right of the page, eith the 'recycle' icon
   
 ### Create the medcamp database:
+- Return to 192.168.2.250 in the browser address bar
 - Click the Adminer icon
 - enter Username: adminer, and password is the Adminer password you entered in the setup
 - Click 'Create database', enter the name 'medcamp', then click Save
 - Click 'SQL command', then import and
-- navigate in the right pane, to /usr/share to view the contents of the /usr/share folder
 - 
   
   
