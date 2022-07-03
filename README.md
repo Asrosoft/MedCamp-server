@@ -69,26 +69,27 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - click the box to select the MedCamp-master.zip file downloaded from: https://github.com/Asrosoft/medcamp/archive/refs/heads/master.zip
   - click Upload, and when finished, scroll the directory list to the end using the page buttons at the bottom right of the page, or select 500 as the number of items to show from the drop down towards the top left of the directory list.
   - right click the MedCamp-master.zip file name, and select extract
-  
+  ### copy images
   - navigate in the right pane, to /usr/share/MedCamp/medcamp-install/images to view the contents of the /usr/share/MedCamp/medcamp-install/images folder
   - click the select all icon on the toolbar (leftmost icon showing a tick in a checkbox)
   - click the Edit button in the toolbar and select Copy
   - navigate in the right pane, to /var/www/images to view the contents of the /var/www/images folder
   - click the Edit button in the toolbar and select Paste
-  
+  ### copy new index.php 
   - navigate in the right pane, to /usr/share/MedCamp/medcamp-install to view the contents of the /usr/share/MedCamp/medcamp-install folder
   - tick the checkbox to the left of the index.php file
   - click the Edit button in the toolbar and select Copy
-
+  ### change /var/www ownership
   - navigate in the right pane, to /var to view the contents of the /var folder
   - tick the checkbox to the left of the directory name www
   - click the Tools button on the toolbar and select Change ownership
   - in the popup, enter www-data as the user name and group name, and tick the Recursive checkbox then click Change
-    
+  ### paste the new index.php
   - navigate in the right pane, to /var/www to view the contents of the /var/www folder
   - right-click the index.php file and select Delete
   - click the Edit button in the toolbar and select Paste
 
+#### Add medcamp web site to Apache
 - select Servers, Apache webserver from the left side menu
   - select the Global Configuration tab
     - select Networking and addresses
