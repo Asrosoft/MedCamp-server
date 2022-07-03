@@ -113,3 +113,4 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - enter medcamp as the username, medcamp as the password
   - tick the All privileges check box
   - click Save at the bottom of the form
+![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/updated-LAMP.png)
