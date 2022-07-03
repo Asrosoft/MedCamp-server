@@ -7,7 +7,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Virtual server host software such as Virtualbox: https://www.virtualbox.org/wiki/Downloads
 - The current Turnkey Linux Lamp appliance can be downloaded from: https://www.turnkeylinux.org/lamp
 
-### Create a new virtual machine in Virtualbox:
+#### Create a new virtual machine in Virtualbox:
   ![Step-1](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-step1.png)
 - Set Memory size to 2048MB.
 - Create a virtual hard drive, the default 8GB is sufficient
@@ -40,7 +40,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - click OK
     ![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-network.png)
 
-### Configure server networking:
+#### Configure server networking:
   Note: example IP addresses used conform to the default for home network routers. Use the IP addresses that conform to your router.
 - Press 'tab' to close server console
 - lamp login: root and then enter password entered in set up
@@ -55,12 +55,12 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Press 'tab' then 'enter' to accept
 - Select 'back' to return to screen that shows the LAMP appliance services
   
-### Connect to server:
+#### Connect to server:
 - Enter the address: 192.168.2.250 in your browser address bar
   Note: you may get a 'Warning: Poential Security Risk Ahead' message from your browser. Click Advanced..., then scroll down and click 'Accept the Risk and Continue'
 ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
 
-### Create the medcamp web site:
+#### Create the medcamp web site:
 - Click the Webmin icon
 - enter username: root, and password as entered in the setup process
 - select Tools, File Manager from the left side menu
@@ -69,6 +69,26 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - click the box to select the MedCamp-master.zip file downloaded from: https://github.com/Asrosoft/medcamp/archive/refs/heads/master.zip
   - click Upload, and when finished, scroll the directory list to the end using the page buttons at the bottom right of the page, or select 500 as the number of items to show from the drop down towards the top left of the directory list.
   - right click the MedCamp-master.zip file name, and select extract
+  
+  - navigate in the right pane, to /usr/share/MedCamp/medcamp-install/images to view the contents of the /usr/share/MedCamp/medcamp-install/images folder
+  - click the select all icon on the toolbar (leftmost icon showing a tick in a checkbox)
+  - click the Edit button in the toolbar and select Copy
+  - navigate in the right pane, to /var/www/images to view the contents of the /var/www/images folder
+  - click the Edit button in the toolbar and select Paste
+  
+  - navigate in the right pane, to /usr/share/MedCamp/medcamp-install to view the contents of the /usr/share/MedCamp/medcamp-install folder
+  - tick the checkbox to the left of the index.php file
+  - click the Edit button in the toolbar and select Copy
+
+  - navigate in the right pane, to /var to view the contents of the /var folder
+  - tick the checkbox to the left of the directory name www
+  - click the Tools button on the toolbar and select Change ownership
+  - in the popup, enter www-data as the user name and group name, and tick the Recursive checkbox then click Change
+    
+  - navigate in the right pane, to /var/www to view the contents of the /var/www folder
+  - right-click the index.php file and select Delete
+  - click the Edit button in the toolbar and select Paste
+
 - select Servers, Apache webserver from the left side menu
   - select the Global Configuration tab
     - select Networking and addresses
@@ -92,6 +112,3 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - enter medcamp as the username, medcamp as the password
   - tick the All privileges check box
   - click Save at the bottom of the form
-
-### Add medcamp web site to Turnkey server initial web page
-- Return to 192.168.2.250 in the browser address bar
