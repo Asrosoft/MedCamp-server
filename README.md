@@ -8,7 +8,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - The current Turnkey Linux Lamp appliance can be downloaded from: https://www.turnkeylinux.org/lamp
 
 ### Create a new virtual machine in Virtualbox:
-  ![Step-1](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-step1.png)
+![Step-1](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-step1.png)
 - Set Memory size to 2048MB.
 - Create a virtual hard drive, the default 8GB is sufficient
 - Hard disk file type VDI is ok
@@ -38,7 +38,8 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - Atteched to: Bridged adapter
   - Name: should default to your host machine's network device
   - click OK
-    ![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-network.png)
+
+![Step-2](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/virtualbox-network.png)
 
 ### Configure server networking:
   Note: example IP addresses used conform to the default for home network routers. Use the IP addresses that conform to your router.
@@ -51,6 +52,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 - Press 'down arrow' for next line, then again
 - Default gateway: 192.168.2.1
 - Name server: 192.168.2.1
+
 ![Step-3](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/turnkey-networking.png)
 - Press 'tab' then 'enter' to accept
 - Select 'back' to return to screen that shows the LAMP appliance services
@@ -58,6 +60,7 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 ### Connect to server:
 - Enter the address: 192.168.2.250 in your browser address bar
   Note: you may get a 'Warning: Poential Security Risk Ahead' message from your browser. Click Advanced..., then scroll down and click 'Accept the Risk and Continue'
+
 ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/LAMP-server.png)
 
 ### Create the medcamp web site:
@@ -113,4 +116,5 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
   - enter medcamp as the username, medcamp as the password
   - tick the All privileges check box
   - click Save at the bottom of the form
-![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/updated-LAMP.png)
+
+  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/updated-LAMP.png)
