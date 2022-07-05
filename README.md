@@ -66,55 +66,9 @@ A virtual server built to support a MedCamp system is built from a TurnKey Linux
 ### Create the medcamp web site:
 - Click the Webmin icon
 - enter username: root, and password as entered in the setup process
-- select Tools, File Manager from the left side menu
-  - navigate in the right pane, to /usr/share to view the contents of the /usr/share folder
-  - click the File button and select  upload to current directory
-  - click the box to select the MedCamp-master.zip file downloaded from: https://github.com/Asrosoft/medcamp/archive/refs/heads/master.zip
-  - click Upload, and when finished, scroll the directory list to the end using the page buttons at the bottom right of the page, or select 500 as the number of items to show from the drop down towards the top left of the directory list.
-  - right click the MedCamp-master.zip file name, and select extract
-  ##### copy images
-  - navigate in the right pane, to /usr/share/MedCamp/medcamp-install/images to view the contents of the /usr/share/MedCamp/medcamp-install/images folder
-  - click the select all icon on the toolbar (leftmost icon showing a tick in a checkbox)
-  - click the Edit button in the toolbar and select Copy
-  - navigate in the right pane, to /var/www/images to view the contents of the /var/www/images folder
-  - click the Edit button in the toolbar and select Paste
-  ##### copy new index.php 
-  - navigate in the right pane, to /usr/share/MedCamp/medcamp-install to view the contents of the /usr/share/MedCamp/medcamp-install folder
-  - tick the checkbox to the left of the index.php file
-  - click the Edit button in the toolbar and select Copy
-  ##### change /var/www ownership
-  - navigate in the right pane, to /var to view the contents of the /var folder
-  - tick the checkbox to the left of the directory name www
-  - click the Tools button on the toolbar and select Change ownership
-  - in the popup, enter www-data as the user name and group name, and tick the Recursive checkbox then click Change
-  ##### paste the new index.php
-  - navigate in the right pane, to /var/www to view the contents of the /var/www folder
-  - right-click the index.php file and select Delete
-  - click the Edit button in the toolbar and select Paste
+- select System, Software Packages from the left side menu
+  - click the paperclip button next to 'From uploaded file'
+  - select the file 'turnkey-medcamp_x.x_all.deb' downloaded from the release page
+  - click the Install button
 
-### Add medcamp web site to Apache
-- select Servers, Apache webserver from the left side menu
-  - select the Global Configuration tab
-    - select Networking and addresses
-    - click the radio button to the left of All on the first blank line, enter 8080 in the port column, then click Save
-  - select Create Virtual Host tab
-    - enter 8080 in the Port field and click the radion button to the left of the input box
-    - select /usr/share/MedCamp-master as the document root
-  - Click the Apply Changes button at the top right of the page, eith the 'recycle' icon
-  
-### Create the medcamp database:
-- Return to 192.168.2.250 in the browser address bar
-- Click the Adminer icon
-- enter Username: adminer, and password is the Adminer password you entered in the setup
-- Click 'Create database', enter the name 'medcamp', then click Save
-- Click 'SQL command', then import and click the Browse... button in the File Upload box
-  - locate and select the medcamp-install/schema.sql file
-  - click the Execute button
-- Select the medcamp database in the DB list at the left of the page
-- Click Privileges at the top of right side pane
-- Click Create user
-  - enter medcamp as the username, medcamp as the password
-  - tick the All privileges check box
-  - click Save at the bottom of the form
-
-  ![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/updated-LAMP.png)
+![Step-4](https://raw.githubusercontent.com/Asrosoft/MedCamp-server/master/assets/updated-LAMP.png)
