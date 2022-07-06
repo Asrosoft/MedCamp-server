@@ -1,0 +1,106 @@
+[DEBREATE-0.7.13]
+<<CTRL>>
+Package: turnkey-medcamp
+Version: 1.0
+Maintainer: Asrosoft <asrosoft@gmail.com>
+Section: web
+Architecture: all
+Priority: optional
+Depends: php-common, php-mysql, mariadb-common | mysql-common
+Description: Web application to record patient registrations for a voluntary medical camp
+ Installer to add a medcamp web site and database to a Turnkey Linux LAMP appliance.
+
+<</CTRL>>
+<<FILES>>
+1
+/home/alastair/NetBeansProjects/MedCamp/medcamp-install/medcamp.conf -> medcamp.conf -> /usr/share/medcamp/install
+/home/alastair/NetBeansProjects/MedCamp/medcamp-install/var -> var -> /usr/share/medcamp/install
+/home/alastair/NetBeansProjects/MedCamp/medcamp-install/schema.sql -> schema.sql -> /usr/share/medcamp/install
+/home/alastair/NetBeansProjects/MedCamp/medcamp/application -> application -> /usr/share/medcamp/www
+/home/alastair/NetBeansProjects/MedCamp/medcamp/assets -> assets -> /usr/share/medcamp/www
+/home/alastair/NetBeansProjects/MedCamp/medcamp/system -> system -> /usr/share/medcamp/www
+/home/alastair/NetBeansProjects/MedCamp/medcamp/index.php* -> index.php -> /usr/share/medcamp/www
+/home/alastair/NetBeansProjects/MedCamp/medcamp-install/shutdown-now.sh* -> shutdown-now.sh -> /usr/share/medcamp
+<</FILES>>
+<<SCRIPTS>>
+<<PREINST>>
+0
+<</PREINST>>
+<<POSTINST>>
+1
+# replace some Turnkey default web files
+mkdir /usr/share/medcamp/save
+cp /var/www/index.php /usr/share/medcamp/save
+cp -R /usr/share/medcamp/install/var/* /var
+chown www-data:www-data /var/www
+
+# create medcamp database and user
+mysql -e "CREATE DATABASE medcamp;"
+mysql -e "GRANT ALL PRIVILEGES ON medcamp.* TO medcamp@localhost IDENTIFIED BY 'medcamp'"
+mysql medcamp < /usr/share/medcamp/install/schema.sql
+
+# add medcamp web site to Apache2
+cp -R /usr/share/medcamp/install/medcamp.conf /etc/apache2/sites-available
+a2ensite medcamp
+echo 'Listen *:8080' >> /etc/apache2/ports.conf
+systemctl reload apache2
+
+# clean up install files
+rm -r /usr/share/medcamp/install
+
+# add cron job to allow web initiated shutdown to work
+(crontab -u root -l
+echo '* * * * * /usr/share/medcamp/shutdown-now.sh >/dev/null  2>&1') | 
+crontab -u root -
+
+# update medcamp web config to get default URL
+IPADDR=$(ip -o route get to 8.8.8.8 | sed -n 's/.*src \([0-9.]\+\).*/\1/p')
+sed -i 's/127.0.0.1/'"$IPADDR"'/' /usr/share/medcamp/www/application/config/config.php
+<</POSTINST>>
+<<PRERM>>
+1
+# clean up Apache2
+a2dissite medcamp
+rm /etc/apache2/sites-available/medcamp.conf
+sed -i '/Listen \*:8080/d' /etc/apache2/ports.conf
+systemctl reload apache2
+
+# delete cron job
+crontab -u root -l | grep -v '/usr/share/medcamp/shutdown-now.sh'  | crontab -u root -
+
+# clean up database
+mysql -e "DROP USER 'medcamp'@'localhost';"
+mysql -e "DROP DATABASE medcamp;"
+
+# clean up turnkey web site
+cp -r /usr/share/medcamp/save/* /var/www
+rm /var/www/images/filemanager.png
+rm /var/www/images/off.png
+rm -f /usr/share/medcamp/save/*
+rmdir /usr/share/medcamp/save
+
+<</PRERM>>
+<<POSTRM>>
+0
+<</POSTRM>>
+<</SCRIPTS>>
+<<CHANGELOG>>
+<<DEST>>DEFAULT<</DEST>>
+turnkey-medcamp (1.0) ; urgency=low
+
+  * Inital version
+
+ -- Asrosoft <asrosoft@gmail.com>  Tue, 05 Jul 2022 14:01:35 +1200
+
+<</CHANGELOG>>
+<<COPYRIGHT>>
+
+<</COPYRIGHT>>
+<<MENU>>
+0
+<</MENU>>
+<<BUILD>>
+1
+1
+1
+<</BUILD>>
